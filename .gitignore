@@ -128,6 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# IntelliJ data
+.idea
+
 # Script test data
 *.zip
 test_data
