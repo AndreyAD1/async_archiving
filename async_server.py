@@ -10,10 +10,10 @@ async def archive():
     )
     while True:
         archived_data = await process.stdout.read(100 * 1024)
-        with open('archive.zip', 'w+b') as archive_file:
-            archive_file.write(archived_data)
-        if process.stdout.at_eof():
+        if not archived_data:
             break
+        with open('archive.zip', 'ab') as archive_file:
+            archive_file.write(archived_data)
     await process.wait()
 
 
